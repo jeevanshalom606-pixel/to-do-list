@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d3a">
+  <title>To-Do App | Make It Happen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="galaxy" aria-hidden="true"><span class="stars stars-one"></span><span class="stars stars-two"></span><span class="nebula nebula-one"></span><span class="nebula nebula-two"></span></div>
+
+  <main class="app-shell">
+    <section class="welcome-screen" id="welcomeScreen" aria-labelledby="welcomeTitle">
+      <div class="welcome-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="eyebrow">A little progress, every day</p>
+      <h1 id="welcomeTitle">To-Do <em>list</em></h1>
+      <p class="welcome-copy">Turn the things on your mind into little wins you can see.</p>
+      <button class="start-button" id="startButton" type="button">Start <span aria-hidden="true">&#8594;</span></button>
+    </section>
+
+    <section class="todo-screen hidden" id="todoScreen" aria-labelledby="appTitle">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Your focused space</p>
+          <h2 id="appTitle">To-Do App</h2>
+        </div>
+        <button class="reset-button" id="resetButton" type="button" title="Clear all tasks" aria-label="Clear all tasks">Clear all</button>
+      </header>
+
+      <section class="progress-card" aria-label="Task progress">
+        <div>
+          <p class="progress-label">Daily momentum</p>
+          <h3 id="motivationMessage">Keep it Up!</h3>
+          <p class="progress-caption"><span id="completedCount">0</span> of <span id="totalCount">0</span> tasks complete</p>
+          <div class="progress-bar" aria-hidden="true"><span id="progressBar"></span></div>
+        </div>
+        <div class="progress-ring" id="progressRing" style="--progress: 0deg" role="img" aria-label="0 percent complete">
+          <span id="progressPercent">0%</span>
+        </div>
+      </section>
+
+      <form class="task-form" id="taskForm">
+        <label class="sr-only" for="taskInput">Add a new task</label>
+        <input id="taskInput" name="task" type="text" placeholder="Add a new task..." autocomplete="off" maxlength="120">
+        <button class="add-button" type="submit" aria-label="Add task" title="Add task"><span aria-hidden="true">+</span></button>
+      </form>
+      <p class="form-message" id="formMessage" role="alert" aria-live="polite"></p>
+
+      <section class="tasks-panel" aria-labelledby="tasksHeading">
+        <div class="section-heading">
+          <h3 id="tasksHeading">Your tasks</h3>
+          <span class="task-count" id="taskCount">0</span>
+        </div>
+        <ul class="task-list" id="taskList" aria-live="polite"></ul>
+        <div class="empty-state" id="emptyState">
+          <img alt="A small moon floating among stars" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 140'%3E%3Cg fill='none' stroke='%23b7c8ff' stroke-linecap='round'%3E%3Cpath d='M40 31h1m42-12h1m62 35h1M20 87h1m114 30h1' stroke-width='4'/%3E%3Cpath d='M74 93a36 36 0 1 0 28-57 29 29 0 1 1-28 57Z' fill='%236f84ff' stroke='%239eb0ff' stroke-width='3'/%3E%3Cpath d='m119 22 3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z' fill='%23fff' stroke='none'/%3E%3C/g%3E%3C/svg%3E">
+          <p>Your list is wide open.</p>
+          <span>Add a task and make today count.</span>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="celebration" id="celebration" aria-hidden="true">
+    <div class="confetti" aria-hidden="true"></div>
+    <div class="celebration-message"><span>All done!</span><strong>You made it happen.</strong></div>
+  </div>
+</body>
+</html>
